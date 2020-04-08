@@ -9,7 +9,11 @@
         <StackLayout Margin="20,40,20,0">
             <Label Text="Your Details"
                  HorizontalOptions="Center" />
-            
+            <Label x:Name="lblFullName" Margin="30,80,20,0" Text="name"/>
+            <Label x:Name="lblProgram" Margin="30,40,20,0" Text="name"/>
+            <Label x:Name="lblSemester" Margin="30,40,20,0" Text="name"/>
+            <Label x:Name="lblCourse" Margin="30,40,20,0" Text="name"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

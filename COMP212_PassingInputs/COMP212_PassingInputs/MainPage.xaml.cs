@@ -20,7 +20,7 @@ namespace COMP212_PassingInputs
 
         private void registerBtn_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new DisplayDetails());
         }
     }
 }

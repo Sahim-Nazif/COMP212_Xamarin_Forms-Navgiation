@@ -17,5 +17,10 @@ namespace COMP212_PassingInputs
         {
             InitializeComponent();
         }
+
+        private void registerBtn_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

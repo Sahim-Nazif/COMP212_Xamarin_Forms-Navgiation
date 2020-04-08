@@ -13,14 +13,21 @@ namespace COMP212_PassingInputs
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+
+       public string fullName, program, semester, course;
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void registerBtn_Clicked(object sender, EventArgs e)
+        private void RegisterBtn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new DisplayDetails());
-        }
+            fullName = txtFullName.Text;
+            program = txtProgram.Text;
+            semester = txtSemster.Text;
+            course = txtCourse.Text;
+        Navigation.PushAsync(new DisplayDetails(fullName, program, semester,course));
+
+        }   
     }
 }

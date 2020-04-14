@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="COMP212_PassingInputs.Checkout">
+    <ContentPage.Content>
+        <StackLayout Margin="20,40,20,0">
+            <Label Text="Select Your Payment Options!"
+                 HorizontalOptions="Center" TextColor="Crimson" FontSize="Large"/>
+       
+            <Grid Margin="10,80,0,0">
+                <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+
+
+            </Grid.ColumnDefinitions>
+                
+                <CheckBox x:Name="chk1"
+                    Grid.Column="0"
+                       Grid.Row="1"
+                    IsChecked="True" Color="Red" CheckedChanged="chk1_CheckedChanged" ></CheckBox>
+            <Label Text="Credit Card" Grid.Column="1"
+                           Grid.Row="1" FontSize="Body"/>
+                <CheckBox x:Name="chk2"
+                    Grid.Column="0"
+                       Grid.Row="2"
+                    IsChecked="False" Color="Red" CheckedChanged="chk2_CheckedChanged"></CheckBox>
+                <Label Text="Debit" Grid.Column="1"
+                           Grid.Row="2" FontSize="Body"/>
+               <!-- <CheckBox x:Name="chk3"
+                    Grid.Column="0"
+                       Grid.Row="3"
+                    IsChecked="False" Color="Red"  CheckedChanged="chk3_CheckedChanged"></CheckBox>
+                <Label Text="Master Card" Grid.Column="1"
+                           Grid.Row="3"/>-->
+            </Grid>
+            <StackLayout>
+                <Entry x:Name="txtAccount" Placeholder="Account Number"/>
+                <Entry x:Name="txtSecurity" Placeholder="Security Code"/>
+                <DatePicker x:Name="txtDate" />
+                <Button Text="Place Order" x:Name="btnOrder" Margin="60,40,60,30" BackgroundColor="Orange" TextColor="White" Clicked="btnOrder_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

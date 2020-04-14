@@ -14,7 +14,7 @@ namespace COMP212_PassingInputs
     public partial class MainPage : ContentPage
     {
 
-       public string fullName, program, semester, course;
+       public string fullName, program, semester, course,email;
 
         public MainPage()
         {
@@ -59,14 +59,38 @@ namespace COMP212_PassingInputs
                     );
                 return;
             }
-            else
+            if (txtEmail.Text == null)
             {
+                await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                   "Email is required !",
+                   "Ok"
+                  );
+                return;
+            }
+        
+            else if (txtCourse.Text=="COMP 212" || txtCourse.Text=="Java")
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Info",
+                     "This Course's Cost is $477. Click Ok to Proceed To Checkout!",
+                     "Ok"
+                    );
                 fullName = txtFullName.Text;
                 program = txtProgram.Text;
                 semester = txtSemster.Text;
                 course = txtCourse.Text;
-               await Navigation.PushAsync(new DisplayDetails(fullName, program, semester, course));
+                email = txtEmail.Text;
+               await Navigation.PushAsync(new DisplayDetails(fullName, program, semester, course,email));
 
+            }
+            else if (txtCourse.Text !="COMP 212" || txtCourse.Text !="Java")
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                    "Please Check Your input for Course. It should be COMP 212 or Java!",
+                    "Ok"
+                   );
             }
 
         }

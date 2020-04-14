@@ -7,12 +7,16 @@
              x:Class="COMP212_PassingInputs.DisplayDetails">
     <ContentPage.Content>
         <StackLayout Margin="20,40,20,0">
-            <Label Text="Your Details"
-                 HorizontalOptions="Center" TextColor="DarkCyan" FontSize="Large"/>
-            <Label x:Name="lblFullName" Margin="30,60,20,0" TextColor="Brown" FontSize="Medium"/>
-            <Label x:Name="lblProgram" Margin="30,20,20,0" TextColor="Brown" FontSize="Medium"/>
-            <Label x:Name="lblSemester" Margin="30,20,20,0"  TextColor="Brown" FontSize="Medium"/>
-            <Label x:Name="lblCourse" Margin="30,20,20,0"  TextColor="Brown" FontSize="Medium"/>
+            <Label Text="Here is Your Details !"
+                 HorizontalOptions="Center" TextColor="Crimson" FontSize="Large"/>
+            <Label Text="To Confirmation Registeration Proceed to Check out for Payment !" TextColor="DarkCyan" FontSize="Body" Margin="0,20,0,0"/>
+            <Label x:Name="lblFullName" Margin="30,60,20,0" TextColor="Black" FontSize="Medium"/>
+            <Label x:Name="lblProgram" Margin="30,20,20,0" TextColor="Black" FontSize="Medium"/>
+            <Label x:Name="lblSemester" Margin="30,20,20,0"  TextColor="Black" FontSize="Medium"/>
+            <Label x:Name="lblCourse" Margin="30,20,20,0"  TextColor="Black" FontSize="Medium"/>
+            <Label x:Name="lblEmail" Margin="30,20,20,0"  TextColor="Black" FontSize="Medium"/>
+            <Label Text="Course Cost:  $477" TextColor="Crimson" FontSize="Medium" Margin="30,20,20,0"/>
+            <Button x:Name="CheckoutBtn" Text="Check Out" Margin="60,60,60,30" Clicked="CheckoutBtn_Clicked" BackgroundColor="Orange" TextColor="White"/>
 
         </StackLayout>
     </ContentPage.Content>

@@ -12,14 +12,20 @@ namespace COMP212_PassingInputs
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DisplayDetails : ContentPage
     {
-        public DisplayDetails(string fname, string program, string semester, string course)
+        public DisplayDetails(string fname, string program, string semester, string course, string email)
         {
             InitializeComponent();
-            lblFullName.Text = fname;
-            lblProgram.Text = program;
-            lblSemester.Text = semester;
-            lblCourse.Text = course;
+            lblFullName.Text ="Your Name: " + fname;
+            lblProgram.Text ="Your Program: " + program;
+            lblSemester.Text ="Semster Classification: " +  semester;
+            lblCourse.Text ="Course Selection: " + course;
+            lblEmail.Text = "Email: " + email;
           
+        }
+
+        private void CheckoutBtn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Checkout());
         }
     }
 }

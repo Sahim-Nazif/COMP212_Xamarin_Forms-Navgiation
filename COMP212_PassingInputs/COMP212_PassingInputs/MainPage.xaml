@@ -8,12 +8,21 @@
 
     <StackLayout Margin="20,40,20,0">
         <!-- Place new controls here -->
-        <Label Margin="30,30,30,0" Text="Enter Your Details" TextColor="RosyBrown" HorizontalOptions="Center" FontSize="Body" FontAttributes="Bold"/>
+        <Frame CornerRadius="15" Padding="0" IsClippedToBounds="True">
+            <Image Source="cent.jpg" Aspect="AspectFill" HeightRequest="70" WidthRequest="70" ></Image>
+        </Frame>
+
+        <Label Margin="0,30,0,0" Text="Welcome To Centennial College&#x0a;Online Course Registeration"
+               TextColor="DarkGreen" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" />
         <Entry x:Name="txtFullName" Margin="20,30,20,5" Placeholder="Full Name" />
         <Entry x:Name="txtProgram" Margin="20,20,20,5" Placeholder="Program Name" />
         <Entry x:Name="txtSemster" Margin="20,20,20,5" Placeholder="Semester" />
         <Entry x:Name="txtCourse" Margin="20,20,20,5" Placeholder="Course" />
-        <Button Text="Register" x:Name="RegisterBtn" Margin="60,20,60,5" Clicked="RegisterBtn_Clicked"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="REGISTER" x:Name="RegisterBtn"  FontSize="Body"  Clicked="RegisterBtn_Clicked"/>
+            <Button Text="Clear" x:Name="ClearBtn" Clicked="ClearBtn_Clicked" />
+        </StackLayout>
+      
     </StackLayout>
 
 </ContentPage>

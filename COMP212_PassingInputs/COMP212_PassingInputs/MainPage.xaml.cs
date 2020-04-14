@@ -15,19 +15,69 @@ namespace COMP212_PassingInputs
     {
 
        public string fullName, program, semester, course;
+
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void RegisterBtn_Clicked(object sender, EventArgs e)
+        private async void RegisterBtn_Clicked(object sender, EventArgs e)
         {
-            fullName = txtFullName.Text;
-            program = txtProgram.Text;
-            semester = txtSemster.Text;
-            course = txtCourse.Text;
-        Navigation.PushAsync(new DisplayDetails(fullName, program, semester,course));
+            if (txtFullName.Text==null)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                     "Error",
+                     "Please Enter Your Full Name !",
+                     "Ok"
+                    );
+                return;
+            }
+            if (txtProgram.Text == null)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                     "Error",
+                     "Please Enter Your Program Name !",
+                     "Ok"
+                    );
+                return;
+            }
+            if (txtSemster.Text == null)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                     "Error",
+                     "Which is Your Semester Classification ?",
+                     "Ok"
+                    );
+                return;
+            }
+            if (txtCourse.Text == null)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                     "Error",
+                     "You Need Enter Course Code !",
+                     "Ok"
+                    );
+                return;
+            }
+            else
+            {
+                fullName = txtFullName.Text;
+                program = txtProgram.Text;
+                semester = txtSemster.Text;
+                course = txtCourse.Text;
+               await Navigation.PushAsync(new DisplayDetails(fullName, program, semester, course));
 
-        }   
+            }
+
+        }
+
+        private void ClearBtn_Clicked(object sender, EventArgs e)
+        {
+            txtFullName.Text = null;
+            txtProgram.Text = null;
+            txtSemster.Text = null;
+            txtCourse.Text = null;
+        }
+
     }
 }
